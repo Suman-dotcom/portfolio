@@ -1,0 +1,218 @@
+/* Base styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: linear-gradient(120deg, #e0f7fa, #80deea);
+  color: #222;
+  transition: background-color 0.5s ease;
+  min-height: 100vh;
+}
+
+/* Header with gradient and subtle shadow */
+header {
+  background: url("subha1.jpeg") no-repeat center 60%;
+  background-size: cover;
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00acc1;
+  box-shadow: 0 3px 8px rgba(0, 172, 193, 0.6);
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Animated glowing name */
+.name {
+  color: #00bcd4;
+  font-weight: 900;
+  font-size: 2.5rem;
+  animation: glow 2.5s ease-in-out infinite alternate;
+  display: inline-block;
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4, 0 0 15px #00bcd4;
+  }
+  to {
+    text-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff,
+      0 0 40px #00e5ff;
+  }
+}
+
+/* Navigation styles */
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 1.2rem;
+  color: #80deea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #00acc1;
+  color: #fff;
+  transform: scale(1.15);
+  outline: none;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section styling */
+section {
+  background: #ffffffdd; /* White with some transparency */
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2.5rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Staggered delays */
+section:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+
+section:nth-of-type(3) {
+  animation-delay: 0.9s;
+}
+
+/* Headings */
+h1,
+h2 {
+  font-weight: 700;
+  color: #004d40;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  border-bottom: 3px solid #00acc1;
+  padding-bottom: 0.3rem;
+  margin-top: 0;
+}
+
+/* Project list */
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+  color: #00695c;
+  font-size: 1.1rem;
+}
+
+ul li {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Footer styling */
+footer {
+  background: #004d40;
+  color: #b2dfdb;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  margin-top: 4rem;
+}
+
+/* Contact links as buttons */
+#contact a {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.5rem 1.2rem;
+  background-color: #00acc1;
+  color: #ffffff !important;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 172, 193, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+#contact a:hover,
+#contact a:focus {
+  background-color: #00838f;
+  box-shadow: 0 8px 25px rgba(0, 131, 143, 0.6);
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  section {
+    padding: 2rem 1.5rem;
+    margin: 1.5rem;
+  }
+
+  nav a {
+    margin: 0 0.6rem;
+    font-size: 1rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+}
